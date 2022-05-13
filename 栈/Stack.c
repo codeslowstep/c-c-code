@@ -15,7 +15,7 @@ void StackPush(Stack* st,Datatype x)
 	if (st->capacity == st->top)
 	{
 		st->a == NULL ? (st->a = (Datatype*)malloc(4 * sizeof(Datatype)), st->capacity = 4) : \
-			(st->a = (Datatype*)malloc(2 * sizeof(Datatype) * st->capacity), st->capacity *= 2);
+			(st->a = (Datatype*)realloc(st->a,2 * sizeof(Datatype) * st->capacity), st->capacity *= 2);
 	}
 	st->a[st->top++] = x;
 }
